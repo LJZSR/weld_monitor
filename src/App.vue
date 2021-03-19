@@ -3,13 +3,18 @@
     <el-header><img src="./assets/sjtu.jpeg"><span>Intelligentized Robotic Welding Technology Laboratory</span></el-header>
     <el-main>
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="Weld Pool Monitor" name="first">
+        <el-tab-pane label="熔池监控" name="first">
           <WeldPool/>
         </el-tab-pane>
-        <el-tab-pane label="Sound Monitor" name="second">
+        <el-tab-pane label="声音监控" name="second">
           <Sound />
         </el-tab-pane>
-        <el-tab-pane label="Current and Voltage Monitor" name="third">角色管理</el-tab-pane>
+        <el-tab-pane label="电流电压监控" name="third">
+          <CurrentAndVoltage />
+        </el-tab-pane>
+        <el-tab-pane label="焊接质量评估" name="fourth">
+          <CurrentAndVoltage />
+        </el-tab-pane>
       </el-tabs>
     </el-main>
   </div>
@@ -18,12 +23,14 @@
 <script>
 import WeldPool from './components/WeldPool.vue'
 import Sound from './components/Sound.vue'
+import CurrentAndVoltage from './components/CurrentAndVoltage.vue'
 
 export default {
   name: 'app',
   components: {
     WeldPool,
     Sound,
+    CurrentAndVoltage,
   },
   data() {
     return {
