@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <el-header><img src="./assets/sjtu.jpeg"><span>Intelligentized Robotic Welding Technology Laboratory</span></el-header>
+    <el-header><img src="./assets/sjtu.jpeg"><span>机器人焊接智能化技术实验室</span></el-header>
     <el-main>
-      <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tabs v-model="activeName">
         <el-tab-pane label="熔池监控" name="first">
           <WeldPool/>
         </el-tab-pane>
@@ -13,7 +13,7 @@
           <CurrentAndVoltage />
         </el-tab-pane>
         <el-tab-pane label="焊接质量评估" name="fourth">
-          <CurrentAndVoltage />
+          <WeldQuality />
         </el-tab-pane>
       </el-tabs>
     </el-main>
@@ -24,6 +24,7 @@
 import WeldPool from './components/WeldPool.vue'
 import Sound from './components/Sound.vue'
 import CurrentAndVoltage from './components/CurrentAndVoltage.vue'
+import WeldQuality from './components/WeldQuality.vue'
 
 export default {
   name: 'app',
@@ -31,6 +32,7 @@ export default {
     WeldPool,
     Sound,
     CurrentAndVoltage,
+    WeldQuality,
   },
   data() {
     return {
